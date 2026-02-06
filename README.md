@@ -19,3 +19,11 @@ This project demonstrates the analysis of trader performance using SQL and Excel
 4. **Insight generation and visualization**: Use Excel pivot tables and clustered column charts to compare trader performance across segments and sentiment phases, producing clear, data-backed insights.
 
 5. **Actionable strategy formulation**: Propose practical trading rules or strategies based on observed relationships between trader behavior, performance metrics, and market sentiment.
+
+## Project Structure
+
+### 1. Database Setup
+
+```sql
+ CREATE DATABASE project;
+ USE project;
