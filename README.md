@@ -452,7 +452,15 @@ Infrequent traders earn nearly 3.6× higher profit per trade than frequent trade
 
 Despite trading more frequently, frequent traders show only a marginally higher win rate (42.25%) compared to infrequent traders (39.29%), suggesting that increased trading activity does not substantially improve prediction accuracy.
 
+## 5.Actionable strategy formulation
 
+**Strategy 1: Control Overtrading Risk During Fear Periods**
+
+During Fear-dominated market conditions, frequent traders should reduce trading frequency and position sizes, as higher activity does not significantly improve win rate and leads to lower profit per trade. Reducing exposure during fearful markets can help limit losses caused by overtrading and emotional decision-making.
+
+**Strategy 2: Selective Scaling for Disciplined Traders in Favorable Markets**
+
+During Neutral or Greed market conditions, infrequent traders can cautiously increase trade frequency, as they demonstrate higher profit per trade and disciplined execution. Favorable sentiment combined with selective participation can help these traders scale performance without sacrificing efficiency.
 
 
 
