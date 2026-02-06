@@ -99,9 +99,56 @@ SELECT
     SUM(Trade_ID IS NULL) AS Trade_ID_nulls,
     SUM(Timestamp IS NULL) AS Timestamp_nulls
 FROM historical_data;
+
+SELECT
+    SUM(timestamp IS NULL) AS timestamp_nulls,
+    SUM(value IS NULL) AS value_nulls,
+    SUM(classification IS NULL) AS classification_nulls,
+    SUM(date IS NULL) AS date_nulls
+FROM fear_greed_index;
 ```
 **output**
-![project](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/screeshot-1.png)
+ historical_data,fear_greed_index does not contain any missing values
 
+**for duplicate data**
+```sql
+SELECT
+  Account, Coin,
+ Execution_Price,
+ Size_Tokens,
+ Size_USD,
+ Side,
+ Date,
+ Time,
+ Start_Position,
+ Direction,
+ Closed_PnL,
+ Transaction_Hash,
+ Order_ID,
+ Crossed,
+ Fee,
+ Trade_ID,
+ Timestamp,
+  COUNT(*) AS cnt
+FROM historical_data
+GROUP BY
+    Account, Coin,
+ Execution_Price,Size_Tokens,
+ Size_USD,Side,
+ Date,Time,
+ Start_Position,Direction,
+ Closed_PnL,
+ Transaction_Hash,Order_ID,
+ Crossed,Fee,Trade_ID,Timestamp
+HAVING COUNT(*) > 1;
+
+SELECT timestamp, value, classification, date, COUNT(*) AS cnt
+FROM fear_greed_index
+GROUP BY timestamp, value, classification, date
+HAVING COUNT(*) > 1;
+```
+**output**
+
+no duplicate data found in both relation 
 
 
