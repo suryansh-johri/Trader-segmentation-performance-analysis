@@ -332,8 +332,11 @@ WHERE sentiment IN ('Fear','Greed');
 `=T.TEST(range1, range2, 2, 3)`
 
 we get 
+
 for pnl , p=0.598
+
 for win rate , p=0.799
+
 for drawdown proxy ,p=0.53  
 
 **Interpretation**
