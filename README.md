@@ -64,6 +64,7 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
+```
 
 ** Number of rows/columns
 
