@@ -289,9 +289,12 @@ SELECT
 FROM daily_perf_with_sentiment
 WHERE sentiment IN ('Fear','Greed');
 ```
-**now exporting these result and making excel file and then applying t-test to answer this que**
+**now exporting these result and making excel file and then applying t-test to answer this question**
+
 **table-1**
+
 **features**
+
 | Column Name | Description                                 | Type    | Example Values         |
 | ----------- | ------------------------------------------- | ------- | ---------------------- |
 | `date`      | Trading date / record date                  | DATE    | 2023-05-01, 2023-12-14 |
@@ -300,7 +303,9 @@ WHERE sentiment IN ('Fear','Greed');
  **Download**: [performance.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance.csv) (included in repo).
  
 **table-2**
+
 **features**
+
 | Column Name | Description                                 | Type    | Example Values             |
 | ----------- | ------------------------------------------- | ------- | -------------------------- |
 | `date`      | Trading date / record date                  | DATE    | 2023-05-01, 2023-12-17     |
@@ -310,7 +315,9 @@ WHERE sentiment IN ('Fear','Greed');
 **Download**: [performance_winrate.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance_winrate.csv) (included in repo).
 
 **table-3**
+
 **features**
+
 | Column Name      | Description                                            | Type    | Example Values         |
 | ---------------- | ------------------------------------------------------ | ------- | ---------------------- |
 | `date`           | Trading date / record date                             | DATE    | 2023-06-10, 2023-12-20 |
