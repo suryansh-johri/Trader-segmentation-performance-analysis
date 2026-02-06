@@ -426,6 +426,29 @@ with the help of excel, I do data visualization by forming  pivot table.
 
 ![project](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/image-2.png)
 
+**Interpretation**
+
+Frequent traders generate a higher average total PnL per trader compared to infrequent traders. However, this profitability comes from higher trading volume rather than superior trade quality
+
+**Average Profit per Trade by Trading Frequency**
+
+![project](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/image-3.png)
+
+**Interpretation**
+
+Infrequent traders are far more efficient per trade
+
+Infrequent traders earn nearly 3.6× higher profit per trade than frequent traders (₹129.96 vs ₹36.07), indicating better trade selection and disciplined execution.
+
+**Average Win Rate by Trading Frequency**
+
+![project](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/image-4.png)
+
+**Interpretation**
+
+ Higher activity does not significantly improve accuracy
+
+Despite trading more frequently, frequent traders show only a marginally higher win rate (42.25%) compared to infrequent traders (39.29%), suggesting that increased trading activity does not substantially improve prediction accuracy.
 
 
 
