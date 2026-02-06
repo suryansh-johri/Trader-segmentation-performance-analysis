@@ -76,6 +76,32 @@ Dataset contains 2644 records excluding the header row and 4 columns.
 
 Dataset contains 2,11,224 records excluding the header row and 16 columns.
 
+**missing values / duplicates** 
+
+**for missing values**
+```sql
+SELECT
+    SUM(Account IS NULL) AS Account_nulls,
+    SUM(Coin IS NULL) AS Coin_nulls,
+    SUM(Execution_Price IS NULL) AS Execution_Price_nulls,
+    SUM(Size_Tokens IS NULL) AS Size_Tokens_nulls,
+    SUM(Size_USD IS NULL) AS Size_USD_nulls,
+    SUM(Side IS NULL) AS Side_nulls,
+    SUM(Date IS NULL) AS Date_nulls,
+    SUM(Time IS NULL) AS Time_nulls,
+    SUM(Start_Position IS NULL) AS Start_Position_nulls,
+    SUM(Direction IS NULL) AS Direction_nulls,
+    SUM(Closed_PnL IS NULL) AS Closed_PnL_nulls,
+    SUM(Transaction_Hash IS NULL) AS Transaction_Hash_nulls,
+    SUM(Order_ID IS NULL) AS Order_ID_nulls,
+    SUM(Crossed IS NULL) AS Crossed_nulls,
+    SUM(Fee IS NULL) AS Fee_nulls,
+    SUM(Trade_ID IS NULL) AS Trade_ID_nulls,
+    SUM(Timestamp IS NULL) AS Timestamp_nulls
+FROM historical_data;
+```
+**output**
+![project](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/screeshot-1.png)
 
 
 
