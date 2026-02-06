@@ -312,6 +312,7 @@ WHERE sentiment IN ('Fear','Greed');
 | `sentiment` | Market sentiment classification for the day | VARCHAR | Greed, Fear                |
 | `win_rate`  | Percentage of profitable trades for the day | FLOAT   | 0.00, 36.36, 50.00, 100.00 |
 
+
 **Download**: [performance_winrate.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance_winrate.csv) (included in repo).
 
 **table-3**
