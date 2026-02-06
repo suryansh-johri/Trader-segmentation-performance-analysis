@@ -328,7 +328,8 @@ WHERE sentiment IN ('Fear','Greed');
 **Download**: [performance_drawdown proxy.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance_drawdown%20proxy.csv) (included in repo).
 
 **now applying t-test formula in excel**
-'=T.TEST(range1, range2, 2, 3)'
+
+`=T.TEST(range1, range2, 2, 3)`
 
 we get 
 for pnl , p=0.598
