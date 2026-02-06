@@ -317,7 +317,33 @@ WHERE sentiment IN ('Fear','Greed');
 | `sentiment`      | Market sentiment classification for the day            | VARCHAR | Fear, Greed           |
 | `losing day` | Proxy measure representing relative drawdown intensity | int   | 0,1 |
 
-**Download**: [performance_drawdown proxy.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance_winrate.csv) (included in repo).
+**Download**: [performance_drawdown proxy.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance_drawdown%20proxy.csv) (included in repo).
+
+**now applying t-test formula in excel**
+'=T.TEST(range1, range2, 2, 3)'
+
+we get 
+for pnl , p=0.598
+for win rate , p=0.799
+for drawdown proxy ,p=0.53  
+
+**Interpretation**
+
+Since none of the tests reject the null hypothesis, we find no statistically significant difference in trader performance between Fear and Greed days across any of the three performance dimensions.
+This means,
+Trader performance does not differ significantly between Fear and Greed days in terms of profitability, consistency, or downside risk. While sentiment regimes may influence trader behavior, the observed differences in performance metrics are not statistically significant and may be attributed to random variation rather than sentiment-driven effects.
+
+**Que 2: Do traders change behavior based on sentiment (trade frequency, leverage, long/short bias, position sizes)?**
+
+I tested performance differences using Welch’s t-test and found no significant impact of sentiment, and I analyzed behavior descriptively, which showed that traders maintain stable activity, leverage, and positioning across Fear and Greed periods.
+
+**Que 3: Identify segments :
+1.frequent vs infrequent traders
+2. consistent winners vs inconsistent traders**
+
+
+
+
 
 
 
