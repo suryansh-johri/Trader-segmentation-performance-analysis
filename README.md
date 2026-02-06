@@ -52,16 +52,16 @@ CREATE TABLE fear_greed_index (
     classification VARCHAR(20),
     date DATE
 );
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/fear_greed_index.csv'
-INTO TABLE fear_greed_index
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/historical_data.csv'
-INTO TABLE historical_data
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
+ LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/fear_greed_index.csv'
+ INTO TABLE fear_greed_index
+ FIELDS TERMINATED BY ','
+ ENCLOSED BY '"'
+ LINES TERMINATED BY '\r\n'
+ IGNORE 1 ROWS;
+ LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/historical_data.csv'
+ INTO TABLE historical_data
+ FIELDS TERMINATED BY ','
+ ENCLOSED BY '"'
+ LINES TERMINATED BY '\r\n'
+ IGNORE 1 ROWS;
 
