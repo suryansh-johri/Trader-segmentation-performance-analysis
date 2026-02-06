@@ -3,6 +3,7 @@ This project showcases a trader performance analysis built using SQL and Excel, 
 ## Project Overview
 
 **Project Title**: Trader-segmentation-performance-analysis  
+
 **Database**: `project`
 
 **Datasource**:[raw data](https://drive.google.com/drive/folders/19KldLO1b5QENpHxSjgclDE4JD2BMjj_G?usp=sharing)
