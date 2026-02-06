@@ -422,7 +422,7 @@ GROUP BY Account;
 
 with the help of excel, I do data visualization by forming  pivot table 
 
-![project](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/frequent%20vs%20infrequent%202.xlsx)
+![frequent vs infrequent 2.xlsx](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/frequent%20vs%20infrequent%202.xlsx)
 
 **Comparison of Average Total PnL Across Trader Segments**
 
