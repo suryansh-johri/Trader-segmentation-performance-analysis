@@ -345,9 +345,11 @@ Trader performance does not differ significantly between Fear and Greed days in 
 
 I tested performance differences using Welch’s t-test and found no significant impact of sentiment, and I analyzed behavior descriptively, which showed that traders maintain stable activity, leverage, and positioning across Fear and Greed periods.
 
-**Que 3: Identify segments :
-1.frequent vs infrequent traders
-2. consistent winners vs inconsistent traders**
+**Que 3: Identify segments :**
+
+**1.frequent vs infrequent traders**
+
+**2. consistent winners vs inconsistent traders**
 
 
 
