@@ -307,6 +307,17 @@ WHERE sentiment IN ('Fear','Greed');
 | `sentiment` | Market sentiment classification for the day | VARCHAR | Greed, Fear                |
 | `win_rate`  | Percentage of profitable trades for the day | FLOAT   | 0.00, 36.36, 50.00, 100.00 |
 
-**Download**: [performance.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance.csv) (included in repo).
+**Download**: [performance_winrate.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance_winrate.csv) (included in repo).
+
+**table-3**
+**features**
+| Column Name      | Description                                            | Type    | Example Values         |
+| ---------------- | ------------------------------------------------------ | ------- | ---------------------- |
+| `date`           | Trading date / record date                             | DATE    | 2023-06-10, 2023-12-20 |
+| `sentiment`      | Market sentiment classification for the day            | VARCHAR | Fear, Greed           |
+| `losing day` | Proxy measure representing relative drawdown intensity | FLOAT   | 0.00, 0.12, 0.35, 0.78 |
+
+**Download**: [performance_drawdown proxy.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance_winrate.csv) (included in repo).
+
 
 
