@@ -290,13 +290,22 @@ FROM daily_perf_with_sentiment
 WHERE sentiment IN ('Fear','Greed');
 ```
 **now exporting these result and making excel file and then applying t-test to answer this que**
+**table-1**
 **features**
 | Column Name | Description                                 | Type    | Example Values         |
 | ----------- | ------------------------------------------- | ------- | ---------------------- |
 | `date`      | Trading date / record date                  | DATE    | 2023-05-01, 2023-12-14 |
 | `sentiment` | Market sentiment classification for the day | VARCHAR | Greed, Fear   |
 | `daily_pnl` | Daily profit or loss value                  | FLOAT   | -205.43, 0.00, 304.98  |
- **Download**: [performance.csv](https://www.kaggle.com/datasets/nabihazahid/spotify-dataset-for-churn-analysis/data) (included in repo).
+ **Download**: [performance.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance.csv) (included in repo).
+ 
+**table-2**
+**features**
+| Column Name | Description                                 | Type    | Example Values             |
+| ----------- | ------------------------------------------- | ------- | -------------------------- |
+| `date`      | Trading date / record date                  | DATE    | 2023-05-01, 2023-12-17     |
+| `sentiment` | Market sentiment classification for the day | VARCHAR | Greed, Fear       |
+| `win_rate`  | Percentage of profitable trades for the day | FLOAT   | 0.00, 36.36, 50.00, 100.00 |
 
 
 
