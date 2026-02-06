@@ -423,7 +423,8 @@ GROUP BY Account;
 with the help of excel, I do data visualization by forming  pivot table.
 
 **Comparison of Average Total PnL Across Trader Segments**
-(https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/image-2.png)
+
+![project](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/image-2.png)
 
 
 
