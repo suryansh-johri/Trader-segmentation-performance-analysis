@@ -27,3 +27,41 @@ This project demonstrates the analysis of trader performance using SQL and Excel
 ```sql
  CREATE DATABASE project;
  USE project;
+CREATE TABLE historical_data 
+(Account VARCHAR(80),
+ Coin VARCHAR(10),
+ Execution_Price FLOAT,
+ Size_Tokens FLOAT,
+ Size_USD FLOAT,
+ Side VARCHAR(10),
+ Date date,
+ Time Time,
+ Start_Position float,
+ Direction varchar(80),
+ Closed_PnL FLOAT,
+ Transaction_Hash VARCHAR(80),
+ Order_ID BIGINT,
+ Crossed VARCHAR(10),
+ Fee FLOAT,
+ Trade_ID BIGINT,
+ Timestamp BIGINT
+ );
+CREATE TABLE fear_greed_index (
+    timestamp BIGINT,
+    value INT,
+    classification VARCHAR(20),
+    date DATE
+);
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/fear_greed_index.csv'
+INTO TABLE fear_greed_index
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/historical_data.csv'
+INTO TABLE historical_data
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
