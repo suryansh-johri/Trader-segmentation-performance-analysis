@@ -66,13 +66,13 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 ```
 
-** Number of rows/columns
+** Number of rows/columns**
 
-*fear_greed_index
+*fear_greed_index*
 
 Dataset contains 2644 records excluding the header row and 4 columns.
 
-*historical_data
+*historical_data*
 
 Dataset contains 2,11,224 records excluding the header row and 16 columns.
 
