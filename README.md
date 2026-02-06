@@ -151,8 +151,10 @@ HAVING COUNT(*) > 1;
 
 No duplicate data was found in either table.
 
-**Creating the key metrics**
 
+### 2. Creating the key metrics
+
+```sql
 -- daily PnL per trader (or per account)
 
 SELECT
@@ -220,3 +222,4 @@ SELECT
   ) AS long_short_ratio
 FROM historical_data
 GROUP BY account;
+```
