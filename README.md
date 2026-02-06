@@ -315,7 +315,7 @@ WHERE sentiment IN ('Fear','Greed');
 | ---------------- | ------------------------------------------------------ | ------- | ---------------------- |
 | `date`           | Trading date / record date                             | DATE    | 2023-06-10, 2023-12-20 |
 | `sentiment`      | Market sentiment classification for the day            | VARCHAR | Fear, Greed           |
-| `losing day` | Proxy measure representing relative drawdown intensity | FLOAT   | 0.00, 0.12, 0.35, 0.78 |
+| `losing day` | Proxy measure representing relative drawdown intensity | int   | 0,1 |
 
 **Download**: [performance_drawdown proxy.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance_winrate.csv) (included in repo).
 
