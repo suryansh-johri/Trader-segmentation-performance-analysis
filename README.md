@@ -16,6 +16,6 @@ This project demonstrates the analysis of trader performance using SQL and Excel
 
 3. **Trader segmentation and behavioral analysis**: Segment traders based on activity and performance characteristics (e.g., frequent vs infrequent traders) and analyze how these segments behave under different market sentiment regimes (Fear vs Greed).
 
-4.**Insight generation and visualization**: Use Excel pivot tables and clustered column charts to compare trader performance across segments and sentiment phases, producing clear, data-backed insights.
+4. **Insight generation and visualization**: Use Excel pivot tables and clustered column charts to compare trader performance across segments and sentiment phases, producing clear, data-backed insights.
 
-5**Actionable strategy formulation**: Propose practical trading rules or strategies based on observed relationships between trader behavior, performance metrics, and market sentiment.
+5. **Actionable strategy formulation**: Propose practical trading rules or strategies based on observed relationships between trader behavior, performance metrics, and market sentiment.
