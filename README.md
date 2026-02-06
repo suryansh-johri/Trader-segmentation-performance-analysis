@@ -444,7 +444,7 @@ Infrequent traders earn nearly 3.6× higher profit per trade than frequent trade
 
 **Average Win Rate by Trading Frequency**
 
-![project](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/image-4.png)
+![frequent vs infrequent 2.cvs](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/image-4.png)
 
 **Interpretation**
 
