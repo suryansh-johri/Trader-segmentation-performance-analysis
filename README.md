@@ -149,6 +149,74 @@ HAVING COUNT(*) > 1;
 ```
 **output**
 
-no duplicate data found in both relation 
+No duplicate data was found in either table.
 
+**Creating the key metrics**
 
+-- daily PnL per trader (or per account)
+
+SELECT
+  account,
+  date,
+  SUM(closed_pnl) AS daily_pnl
+FROM historical_data
+GROUP BY
+  account,
+  date
+ORDER BY
+  account,
+  date;
+
+-- win rate, average trade size
+select * from historical_data;
+
+SELECT
+  account,
+  COUNT(*) AS total_trades,
+  SUM(CASE WHEN closed_pnl > 0 THEN 1 ELSE 0 END) AS wins,
+  SUM(CASE WHEN closed_pnl < 0 THEN 1 ELSE 0 END) AS losses,
+  SUM(CASE WHEN closed_pnl = 0 THEN 1 ELSE 0 END) AS breakeven,
+  ROUND(
+    100.0 * SUM(CASE WHEN closed_pnl > 0 THEN 1 ELSE 0 END) 
+    / NULLIF(COUNT(*), 0), 
+    2
+  ) AS win_rate_percent,
+  AVG(size_tokens) AS avg_trade_size_tokens,
+  AVG(size_usd) AS avg_trade_size_usd
+FROM historical_data
+WHERE closed_pnl IS NOT NULL
+GROUP BY account;
+
+-- Leverage Distribution
+SELECT
+  CASE
+    WHEN Direction IN ('Buy','Sell','Spot Dust Conversion')
+      THEN 'Non-Leveraged'
+    ELSE 'Leveraged '
+  END AS leverage_type,
+  COUNT(*) AS trades
+FROM historical_data
+GROUP BY leverage_type;
+
+-- number of trades per day
+SELECT
+  date,
+  COUNT(*) AS trades_per_day
+FROM historical_data
+GROUP BY date
+ORDER BY date;
+
+--  long/short ratio
+SELECT
+  account,
+  COUNT(*) AS total_trades_all,
+  
+  SUM(CASE WHEN Direction IN ('Open Long','Close Long') THEN 1 ELSE 0 END) AS long_trades,
+  SUM(CASE WHEN Direction IN ('Open Short','Close Short') THEN 1 ELSE 0 END) AS short_trades,
+  ROUND(
+    SUM(CASE WHEN Direction IN ('Open Long','Close Long') THEN 1 ELSE 0 END) /
+    NULLIF(SUM(CASE WHEN Direction IN ('Open Short','Close Short') THEN 1 ELSE 0 END), 0),
+    2
+  ) AS long_short_ratio
+FROM historical_data
+GROUP BY account;
