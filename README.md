@@ -355,6 +355,75 @@ I tested performance differences using Welch’s t-test and found no significant
 
 **2. consistent winners vs inconsistent traders**
 
+```sql
+
+--  Frequent vs Infrequent Traders 
+SELECT
+    Account,
+    COUNT(*) AS total_trades,
+    CASE 
+        WHEN COUNT(*) >= (
+            SELECT AVG(cnt)
+            FROM (
+                SELECT COUNT(*) AS cnt
+                FROM historical_data
+                GROUP BY Account
+            ) x
+        ) THEN 'Frequent Trader'
+        ELSE 'Infrequent Trader'
+    END AS trader_frequency
+FROM historical_data
+GROUP BY Account;
+
+-- Consistent Winners vs Inconsistent Traders
+SELECT
+  Account,
+  COUNT(*) AS trades,
+  SUM(Closed_PnL) AS total_pnl,
+  AVG(CASE WHEN Closed_PnL > 0 THEN 1 ELSE 0 END) AS win_rate,
+  CASE
+    WHEN COUNT(*) >= 20
+     AND SUM(Closed_PnL) > 0
+     AND AVG(CASE WHEN Closed_PnL > 0 THEN 1 ELSE 0 END) >= 0.55
+    THEN 'Consistent Winner'
+    ELSE 'Inconsistent Trader'
+  END AS performance_segment
+FROM historical_data
+GROUP BY Account;
+
+```
+
+## 4. Insight generation and visualization
+
+for insight ,I consider table [frequent vs infrequent 2.csv](https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/performance_winrate.csv) (included in repo).
+
+I make this table by using SQL 
+```sql 
+SELECT
+    Account,
+    COUNT(*) AS total_trades,
+    SUM(Closed_PnL) AS total_pnl,
+    SUM(Closed_PnL) / NULLIF(COUNT(*), 0) AS avg_pnl_per_trade,
+    AVG(CASE WHEN Closed_PnL > 0 THEN 1 ELSE 0 END) AS win_rate,
+    CASE 
+        WHEN COUNT(*) >= (
+            SELECT AVG(cnt)
+            FROM (
+                SELECT COUNT(*) AS cnt
+                FROM historical_data
+                GROUP BY Account
+            ) x
+        ) THEN 'Frequent Trader'
+        ELSE 'Infrequent Trader'
+    END AS trader_frequency
+FROM historical_data
+GROUP BY Account;
+```
+
+with the help of excel, I do data visualization by forming  pivot table.
+
+**Comparison of Average Total PnL Across Trader Segments**
+(https://github.com/suryansh-johri/Trader-segmentation-performance-analysis/blob/main/image-2.png)
 
 
 
