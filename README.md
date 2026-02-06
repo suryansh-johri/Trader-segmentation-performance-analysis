@@ -223,3 +223,82 @@ SELECT
 FROM historical_data
 GROUP BY account;
 ```
+
+### 3. Trader segmentation and behavioral analysis
+
+**Does performance differ between Fear vs Greed days?**
+
+```sql
+-- Prepare daily trader performance
+CREATE VIEW daily_trader_perf AS
+SELECT
+  account,
+  date,
+  SUM(Closed_PnL) AS daily_pnl,
+  COUNT(*) AS trades,
+  ROUND(
+    100.0 * SUM(CASE WHEN Closed_PnL > 0 THEN 1 ELSE 0 END) /
+    NULLIF(COUNT(*), 0),
+    2
+  ) AS win_rate
+FROM historical_data
+WHERE Closed_PnL IS NOT NULL
+GROUP BY account, date;
+
+-- Join with sentiment (Fear / Greed)
+CREATE VIEW daily_perf_with_sentiment AS
+SELECT
+  d.account,
+  d.date,
+  d.daily_pnl,
+  d.trades,
+  d.win_rate,
+  f.classification AS sentiment
+FROM daily_trader_perf d
+JOIN fear_greed_index f
+  ON d.date = f.date;
+
+-- discriptive analysis on daily_pnl 
+SELECT
+  date,
+  sentiment,
+  daily_pnl
+FROM daily_perf_with_sentiment
+WHERE sentiment IN ('Fear', 'Greed');
+
+-- discriptive analysis on win_rate
+SELECT
+  date,
+  sentiment,
+  win_rate
+FROM daily_perf_with_sentiment
+WHERE sentiment IN ('Fear','Greed');
+
+-- discriptive analysis on drawdown proxy
+SELECT
+  sentiment,
+  AVG(CASE WHEN daily_pnl < 0 THEN 1 ELSE 0 END) AS losing_day_ratio
+FROM daily_perf_with_sentiment
+GROUP BY sentiment;
+
+-- Prepare data for statistical test
+SELECT
+  date,
+  sentiment,
+  CASE WHEN daily_pnl < 0 THEN 1 ELSE 0 END AS losing_day
+FROM daily_perf_with_sentiment
+WHERE sentiment IN ('Fear','Greed');
+```
+**now exporting these result and making excel file and then applying t-test to answer this que**
+**features**
+| Column Name | Description                                 | Type    | Example Values         |
+| ----------- | ------------------------------------------- | ------- | ---------------------- |
+| `date`      | Trading date / record date                  | DATE    | 2023-05-01, 2023-12-14 |
+| `sentiment` | Market sentiment classification for the day | VARCHAR | Greed, Fear   |
+| `daily_pnl` | Daily profit or loss value                  | FLOAT   | -205.43, 0.00, 304.98  |
+ **Download**: [performance.csv](https://www.kaggle.com/datasets/nabihazahid/spotify-dataset-for-churn-analysis/data) (included in repo).
+
+
+
+
+
